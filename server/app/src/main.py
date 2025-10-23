@@ -1,11 +1,21 @@
 from flask import Flask
 from blueprints.userbp import bp
+from config import db_config
 from routes import userRoutes
+from models import db
+
 
 def create_app() :
 
     app = Flask(__name__)
     app.register_blueprint(bp)
+
+    cfg = db_config()
+    app.config.update(cfg)
+
+    db.init_app(app)
+    
+
     return app
 
 if __name__ == "__main__" :

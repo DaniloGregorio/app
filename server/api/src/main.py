@@ -1,8 +1,9 @@
 from flask import Flask
-from blueprints.userbp import bp
-from config import db_config
-from routes import userRoutes
-from models import db
+from .blueprints.userbp import bp
+from .config import db_config
+from .routes import userRoutes
+from .models import db
+from flask_migrate import Migrate
 
 
 def create_app() :
@@ -12,8 +13,11 @@ def create_app() :
 
     cfg = db_config()
     app.config.update(cfg)
+    migrate = Migrate()
+    
 
     db.init_app(app)
+    migrate.init_app(app, db)
     
 
     return app

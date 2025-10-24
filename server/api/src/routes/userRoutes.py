@@ -1,4 +1,4 @@
-from blueprints.userbp import bp
+from ..blueprints.userbp import bp
 
 @bp.route("/register",methods=['POST'])
 def register_user() :

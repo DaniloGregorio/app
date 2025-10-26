@@ -4,6 +4,7 @@ from .config import db_config
 from .routes import userRoutes
 from .models import db
 from flask_migrate import Migrate
+from sqlalchemy import text
 
 
 def create_app() :
@@ -19,6 +20,16 @@ def create_app() :
     db.init_app(app)
     migrate.init_app(app, db)
     
+    with app.app_context() : 
+        try:
+            db.session.execute(text("SELECT 1"))
+            print("connected")
+
+        except Exception as e:
+            print("not connected",e)
+
+
+        db.create_all()
 
     return app
 

@@ -1,6 +1,6 @@
 from flask import Flask
 from .blueprints.userbp import bp
-from .config import db_config
+from .config import config
 from .routes import userRoutes
 from .models import db
 from flask_migrate import Migrate
@@ -12,7 +12,7 @@ def create_app() :
     app = Flask(__name__)
     app.register_blueprint(bp)
 
-    cfg = db_config()
+    cfg = config()
     app.config.update(cfg)
     migrate = Migrate()
     

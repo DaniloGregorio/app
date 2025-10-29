@@ -1,7 +1,10 @@
 from ..blueprints.userbp import bp
-from flask import jsonify,request
+from flask import jsonify,request,current_app
 from ..models import User,db
 from sqlalchemy.exc import IntegrityError
+import jwt
+from datetime import datetime,timedelta
+
 
 @bp.route("/register",methods=['POST'])
 def register_user() :
@@ -13,6 +16,12 @@ def register_user() :
 
     if not username or not password :
         return jsonify({"error":"password and username are required"}),400
+
+    userEven = User.query.filter_by(username = username,password = password).first()
+
+    if userEven :
+        return jsonify({"error":"user already registered"})
+    
 
     user = User(username=username,password=password)
 
@@ -31,7 +40,7 @@ def register_user() :
 @bp.route("/login",methods=['POST'])
 def login_user() :
     
-    data = request.json()
+    data = request.get_json()
 
     username = data.get("username")
     password = data.get ("password")
@@ -39,6 +48,18 @@ def login_user() :
     user = User.query.filter_by(username = username,password = password).first()
 
     if user :
-        return jsonify({"message":"user registered"}),201
+
+        payload = {
+            "id":user.id,
+            "username":user.username,
+            "exp":datetime.utcnow() + timedelta(hours=1),
+        }
+
+        token = jwt.encode(payload, current_app.config["SECRET_KEY"],algorithm="HS256")
+        
+        return jsonify({
+            "message":"user logged-in",
+            "token":token
+            }),200
     else :
         return jsonify({"error","invalid user or password"}),401

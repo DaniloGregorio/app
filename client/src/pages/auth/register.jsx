@@ -31,6 +31,8 @@ function Register(){
     };
 
     return(
+        <>
+        <Navbar/>
         <div className="register">
             <h1 className="createAccont">Create Accont</h1>
 
@@ -59,6 +61,7 @@ function Register(){
             </form>
             {message && <p className="mt-4">{message}</p>}
         </div>
+        </>
     );
 }
 

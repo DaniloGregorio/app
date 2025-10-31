@@ -1,11 +1,14 @@
+import Navbar from "../components/navbar";
 
 function Home(){
 
 
     return(
         <>
-        <h1>Home</h1>
-        <p>abcd</p>
+        <Navbar/>
+        <div className="home">
+        <h1>home</h1>
+        </div>
         </>
     )
 }

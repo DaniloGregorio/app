@@ -1,0 +1,33 @@
+@layer components {
+  .home {
+    @apply relative flex items-center justify-center h-screen text-white;
+    background: linear-gradient(
+        rgba(0, 0, 0, 1), 
+        rgba(0, 0, 0, 0.9),  
+        rgba(0, 0, 0, 1)   
+      );
+      
+    background-size: cover;
+    background-position: center;
+  }
+
+  .home-content {
+    @apply text-center z-10;
+  }
+
+  .home h1 {
+    @apply text-5xl font-bold mb-4;
+  }
+
+  /* Fade suave quando a página é carregada */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+}

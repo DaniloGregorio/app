@@ -1,4 +1,4 @@
-.home {
+.login{
   height: 100vh;
   width: 100%;
   background: linear-gradient(180deg, #000000, #1a0522, #3a0b55);
@@ -11,14 +11,14 @@
   animation: fadeIn 1.2s ease-in-out;
 }
 
-.home h1 {
+.login h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
   letter-spacing: 2px;
   text-shadow: 0 0 8px rgba(199, 125, 255, 0.6);
 }
 
-.home p {
+.login p {
   font-size: 1.2rem;
   color: #c7a1f7;
   max-width: 600px;

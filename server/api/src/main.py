@@ -5,11 +5,13 @@ from .routes import userRoutes
 from .models import db
 from flask_migrate import Migrate
 from sqlalchemy import text
+from flask_cors import CORS
 
 
 def create_app() :
 
     app = Flask(__name__)
+    CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
     app.register_blueprint(bp)
 
     cfg = config()

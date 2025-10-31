@@ -6,8 +6,11 @@ import jwt
 from datetime import datetime,timedelta
 
 
-@bp.route("/register",methods=['POST'])
+@bp.route("/register",methods=['POST','OPTIONS'])
 def register_user() :
+    
+    if request.method == 'OPTIONS':
+        return '', 200
 
     data = request.get_json()
 

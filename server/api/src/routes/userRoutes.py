@@ -4,6 +4,7 @@ from ..models import User,db
 from sqlalchemy.exc import IntegrityError
 import jwt
 from datetime import datetime,timedelta
+from ..utils.profileDecorator import token_required
 
 
 @bp.route("/register",methods=['POST','OPTIONS'])
@@ -43,6 +44,7 @@ def register_user() :
 @bp.route("/login",methods=['POST'])
 def login_user() :
     
+    
     data = request.get_json()
 
     username = data.get("username")
@@ -65,4 +67,16 @@ def login_user() :
             "token":token
             }),200
     else :
-        return jsonify({"error","invalid user or password"}),401
+        return jsonify({"error":"invalid user or password"}),401
+    
+@bp.route("/<int:id>", methods=["GET","OPTIONS"])
+@token_required
+def get_user(current_user, id):
+
+    if current_user.id != id:
+        return jsonify({"error": "Unauthorized access"}), 403
+    
+    return jsonify({
+        "id": current_user.id,
+        "username": current_user.username
+    })

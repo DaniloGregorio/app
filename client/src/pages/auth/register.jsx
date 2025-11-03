@@ -12,6 +12,7 @@ function Register(){
         e.preventDefault();
 
         try{
+            
             const response = await axios.post("http://localhost:5000/user/register",{
                 username,
                 password,
@@ -24,7 +25,9 @@ function Register(){
 
             setMessage("user registered");
             console.log(response.data);
+
         }catch (error){
+
             console.error("error to register",error);
             setMessage("error");
         }

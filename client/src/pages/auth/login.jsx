@@ -1,10 +1,14 @@
 import { useState } from "react";
 import Navbar from "../../components/navbar";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 function Login(){
 
     const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
     const [message,setMessage] = useState("");
+    const navigate = useNavigate();
 
      const handleSubmit = async (e)=>{
         e.preventDefault();
@@ -15,16 +19,33 @@ function Login(){
                 password,
 
             },{
-                headers:{
-                    "Content-Type":"application/json"
-                }
-            });
+                headers:{"Content-Type":"application/json"}
+            }
+        );
 
-            setMessage("user logged-in");
-            console.log(response.data);
+        const token = response.data.token;
+
+        if(token){
+
+            localStorage.setItem("token",token);
+
+            setMessage("user logged in");
+
+            navigate("/profile");
+            
+        }else{
+
+            setMessage("Login successful, but no token received.");
+            
+        }
+
+        console.log("JWT recieved:", token);
+
         }catch (error){
+
             console.error("error to register",error);
             setMessage("error to login");
+            
         }
     };
     

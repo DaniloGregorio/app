@@ -4,16 +4,16 @@ function Navbar(){
 
 
     return(
-        <div className="navbar">
+        <nav className="navbar">
             <div className="navbarcontent">
                 <h1 className="title">App</h1>
                 <div className="navbarlinks">
-                <Link to="/">Home</Link>
-                <Link to="/login">login</Link>
-                <Link to="/register">Register</Link>
+                    <Link to="/">Home</Link>
+                    <Link to="/login">login</Link>
+                    <Link to="/register">Register</Link>
                 </div>
             </div>
-        </div>
+        </nav>
     )
 
 }

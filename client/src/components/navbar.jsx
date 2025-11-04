@@ -6,7 +6,7 @@ function Navbar(){
     return(
         <nav className="navbar">
             <div className="navbarcontent">
-                <h1 className="title">App</h1>
+                <h1 className="title">GameListToPlay</h1>
                 <div className="navbarlinks">
                     <Link to="/">Home</Link>
                     <Link to="/login">login</Link>

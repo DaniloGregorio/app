@@ -24,4 +24,22 @@
   max-width: 600px;
 }
 
+.inputbuttonhome {
+  background: linear-gradient(90deg, #a85cf9, #7a2cf5);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 0.5rem;
+  width: 150%;
+}
+
+.inputbuttonhome:hover {
+  background: linear-gradient(90deg, #b36bff, #9d3bfa);
+  transform: scale(1.03);
+}
+
 

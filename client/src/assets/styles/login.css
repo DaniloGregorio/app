@@ -34,7 +34,7 @@
   text-align: center;
 }
 
-/* Inputs */
+
 .logininput {
   width: 100%;
   background: rgba(255, 255, 255, 0.1);
@@ -52,7 +52,7 @@
   box-shadow: 0 0 10px rgba(180, 90, 255, 0.4);
 }
 
-/* Botão */
+
 .inputbutton {
   background: linear-gradient(90deg, #a85cf9, #7a2cf5);
   border: none;
@@ -71,8 +71,8 @@
   transform: scale(1.03);
 }
 
-/* Mensagem */
-.register p {
+
+.login p {
   margin-top: 1.2rem;
   font-size: 1.1rem;
   color: #c7a1f7;

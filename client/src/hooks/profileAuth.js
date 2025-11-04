@@ -11,6 +11,7 @@ export function useProfileData() {
     if (!token) return;
 
     try {
+      
       const decoded = jwtDecode(token);
       const userId = decoded.id;
 
@@ -19,7 +20,9 @@ export function useProfileData() {
       })
       .then((res) => setUserData(res.data))
       .catch((err) => setError(err));
+
     } catch (err) {
+
       console.error("Error to decrypt the token:", err);
       setError(err);
     }

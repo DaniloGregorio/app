@@ -1,0 +1,12 @@
+@reference "tailwindcss";
+
+:root {
+  --wood-brown: #3a2403;
+  --wood-medium: #5a3413;
+  --beige-light: #e8dbc8;
+  --beige-soft: #c4b59e;
+}
+
+body {
+  @apply bg-(--beige-light) text-(--wood-brown) font-sans;
+}

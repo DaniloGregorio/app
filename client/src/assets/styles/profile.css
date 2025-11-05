@@ -1,0 +1,22 @@
+@reference "tailwindcss";
+
+.profile {
+  @apply min-h-screen flex flex-col justify-center items-center 
+         bg-(--beige-soft) text-(--wood-brown) p-6;
+}
+
+.profile h1 {
+  @apply text-4xl font-bold mb-8 text-(--wood-brown);
+}
+
+.profile-card {
+  @apply bg-(--beige-light) shadow-lg rounded-2xl p-8 text-center max-w-md w-full;
+}
+
+.profile-card p {
+  @apply text-lg mb-3;
+}
+
+.profile-error {
+  @apply text-red-600 font-semibold mt-4;
+}

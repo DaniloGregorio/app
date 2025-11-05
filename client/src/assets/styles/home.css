@@ -1,45 +1,22 @@
+@reference "tailwindcss";
+
 .home {
-  height: 100vh;
-  width: 100%;
-  background: linear-gradient(180deg, #000000, #1a0522, #3a0b55);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #eaeaea;
-  text-align: center;
-  animation: fadeIn 1.2s ease-in-out;
+  @apply min-h-screen flex flex-col justify-center items-center 
+         bg-(--beige-soft) text-(--wood-brown) p-6;
 }
+
 
 .home h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
-  text-shadow: 0 0 8px rgba(199, 125, 255, 0.6);
+  @apply text-4xl font-bold mb-4 text-(--wood-brown) tracking-wide;
 }
+
 
 .home p {
-  font-size: 1.2rem;
-  color: #c7a1f7;
-  max-width: 600px;
+  @apply text-lg mb-6 text-(--wood-medium);
 }
+
 
 .inputbuttonhome {
-  background: linear-gradient(90deg, #a85cf9, #7a2cf5);
-  border: none;
-  padding: 0.8rem;
-  border-radius: 8px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top: 0.5rem;
-  width: 150%;
+  @apply bg-(--wood-medium) text-(--beige-light) px-8 py-3 rounded-lg font-semibold shadow-md
+         hover:bg-(--wood-brown) transition duration-300;
 }
-
-.inputbuttonhome:hover {
-  background: linear-gradient(90deg, #b36bff, #9d3bfa);
-  transform: scale(1.03);
-}
-
-

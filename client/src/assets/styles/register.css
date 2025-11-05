@@ -1,79 +1,24 @@
+@reference "tailwindcss";
+
 .register {
-  height: 100vh;
-  width: 100%;
-  background: linear-gradient(180deg, #000000, #1a0522, #3a0b55);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #eaeaea;
-  text-align: center;
+  @apply min-h-screen flex flex-col justify-center items-center 
+         bg-(--beige-soft) text-(--wood-brown) p-6;
 }
 
-/* Título */
-.register h1 {
-  font-size: 2.8rem;
-  margin-bottom: 2rem;
-  letter-spacing: 2px;
-  text-shadow: 0 0 8px rgba(199, 125, 255, 0.6);
+.registerAccount {
+  @apply text-4xl font-bold mb-8 text-(--wood-brown) tracking-wide;
 }
 
-/* Container fosco central — o "quadrado" */
 .registerform {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(160, 60, 255, 0.3);
-  backdrop-filter: blur(6px);
-  padding: 3rem 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 340px;
-  text-align: center;
+  @apply flex flex-col gap-4 bg-(--beige-light) shadow-lg rounded-2xl p-8 w-full max-w-sm;
 }
 
-/* Inputs */
 .registerinput {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  outline: none;
-  padding: 0.8rem;
-  color: #eaeaea;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: 0.3s;
+  @apply border border-(--wood-medium) rounded-lg px-4 py-2 text-(--wood-brown) 
+         focus:outline-none focus:ring-2 focus:ring-(--wood-medium) focus:border-transparent;
 }
 
-.registerinput:focus {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 10px rgba(180, 90, 255, 0.4);
-}
-
-
-.inputbutton {
-  background: linear-gradient(90deg, #a85cf9, #7a2cf5);
-  border: none;
-  padding: 0.8rem;
-  border-radius: 8px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top: 0.5rem;
-  width: 100%;
-}
-
-.inputbutton:hover {
-  background: linear-gradient(90deg, #b36bff, #9d3bfa);
-  transform: scale(1.03);
-}
-
-/* Mensagem */
-.register p {
-  margin-top: 1.2rem;
-  font-size: 1.1rem;
-  color: #c7a1f7;
+.registerbutton {
+  @apply bg-(--wood-medium) text-(--beige-light) px-6 py-2 rounded-lg font-semibold shadow-md
+         hover:bg-(--wood-brown) transition duration-300;
 }

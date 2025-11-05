@@ -25,7 +25,7 @@ def create_app() :
     with app.app_context() : 
         try:
             db.session.execute(text("SELECT 1"))
-            print("connected")
+            print("database connected")
 
         except Exception as e:
             print("not connected",e)

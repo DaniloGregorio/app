@@ -1,6 +1,7 @@
 import Navbar from "../../components/navbar";
 import { useState } from "react";
 import axios from "axios";
+import "../../assets/styles/register.css"
 
 function Register(){
     
@@ -37,7 +38,7 @@ function Register(){
         <>
         <Navbar/>
         <div className="register">
-            <h1 className="createAccont">Create Accont</h1>
+            <h1 className="registerAccount">Create Accont</h1>
 
             <form onSubmit={handleSubmit} className="registerform">
 

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "../../components/navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../../assets/styles/login.css"
 
 function Login(){
 

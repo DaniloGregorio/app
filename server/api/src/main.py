@@ -1,5 +1,5 @@
 from flask import Flask
-from .blueprints.userbp import bp
+from .blueprints.userbp import bp,bpbooks
 from .config import config
 from .routes import userRoutes
 from .models import db
@@ -13,6 +13,7 @@ def create_app() :
     app = Flask(__name__)
     CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
     app.register_blueprint(bp)
+    app.register_blueprint(bpbooks)
 
     cfg = config()
     app.config.update(cfg)

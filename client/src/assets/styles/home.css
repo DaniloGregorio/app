@@ -1,22 +1,70 @@
 @reference "tailwindcss";
 
-.home {
-  @apply min-h-screen flex flex-col justify-center items-center 
-         bg-(--beige-soft) text-(--wood-brown) p-6;
+/* ====== CONTAINER PRINCIPAL ====== */
+.profile {
+  @apply min-h-screen flex flex-col items-center text-center 
+         p-6 bg-(--beige-soft) text-(--wood-brown);
 }
 
-
-.home h1 {
-  @apply text-4xl font-bold mb-4 text-(--wood-brown) tracking-wide;
+/* ====== TÍTULO ====== */
+.profile-title {
+  @apply text-4xl font-bold mb-8 text-(--wood-dark) tracking-wide;
 }
 
-
-.home p {
-  @apply text-lg mb-6 text-(--wood-medium);
+/* ====== MENSAGEM DE BOAS-VINDAS ====== */
+.profile-welcome {
+  @apply text-lg mb-8 text-(--wood-medium);
 }
 
+/* ====== ERRO ====== */
+.profile-error {
+  @apply text-red-600 font-semibold mt-4;
+}
 
-.inputbuttonhome {
-  @apply bg-(--wood-medium) text-(--beige-light) px-8 py-3 rounded-lg font-semibold shadow-md
+/* ====== FORMULÁRIO DE PESQUISA ====== */
+.profile-search {
+  @apply flex gap-2 mb-8;
+}
+
+.profile-input {
+  @apply px-4 py-2 rounded-lg border border-(--wood-medium)
+         text-(--wood-dark) bg-(--beige-light)
+         focus:outline-none focus:ring-2 focus:ring-(--wood-brown)
+         w-64;
+}
+
+.profile-button {
+  @apply bg-(--wood-medium) text-(--beige-light) px-6 py-2 rounded-lg font-semibold shadow-md
          hover:bg-(--wood-brown) transition duration-300;
+}
+
+/* ====== RESULTADOS ====== */
+.profile-results {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl;
+}
+
+.profile-card {
+  @apply bg-(--beige-light) p-4 rounded-2xl shadow-md flex items-center gap-4
+         border border-(--wood-medium) transition duration-200 hover:shadow-lg;
+}
+
+.profile-card-img {
+  @apply w-20 h-28 rounded-lg object-cover border border-(--wood-medium);
+}
+
+.profile-card-placeholder {
+  @apply w-20 h-28 bg-(--wood-medium) text-(--beige-light) 
+         flex items-center justify-center text-sm rounded-lg;
+}
+
+.profile-card-info {
+  @apply text-left;
+}
+
+.profile-card-title {
+  @apply font-bold text-(--wood-dark);
+}
+
+.profile-card-text {
+  @apply text-sm text-(--wood-medium);
 }

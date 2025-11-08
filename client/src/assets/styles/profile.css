@@ -34,7 +34,6 @@
          hover:bg-(--wood-brown) transition duration-300;
 }
 
-/* ====== RESULTADOS DA PESQUISA ====== */
 .profile-results {
   @apply grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl;
 }
@@ -70,7 +69,6 @@
          hover:bg-(--wood-brown) transition duration-300;
 }
 
-/* ====== SEÇÃO DE LIVROS SALVOS ====== */
 .saved-books {
   @apply mt-12 w-full max-w-3xl;
 }
@@ -84,7 +82,6 @@
          hover:bg-(--wood-brown) transition duration-300;
 }
 
-/* ====== LIVROS SALVOS (GRID) ====== */
 .saved-books-grid {
   @apply grid grid-cols-1 md:grid-cols-2 gap-4;
 }

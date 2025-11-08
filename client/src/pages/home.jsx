@@ -14,7 +14,7 @@ function Home() {
           Save all books you want to reed in one way
         </p>
         <Link to="/login">
-          <button className="inputbuttonhome">Login</button>
+          <button className="inputbutton">Login</button>
         </Link>
       </div>
     </>

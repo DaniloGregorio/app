@@ -9,7 +9,6 @@ class User(db.Model):
     username = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
 
-    # relação com SavedBook
     saved_books = db.relationship('SavedBook', backref='user', lazy=True)
 
 
